@@ -67,7 +67,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Mortgage_Calculation_Screen</targetReference>
+            <targetReference>Business_Loan_Calculation_Screen</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -172,7 +172,7 @@
         <locationY>276</locationY>
         <assignRecordIdToReference>leadId</assignRecordIdToReference>
         <connector>
-            <targetReference>Mortgage_Results</targetReference>
+            <targetReference>Business_Loan_Results</targetReference>
         </connector>
         <inputAssignments>
             <field>City</field>
@@ -481,7 +481,7 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Mortgage_Calculation_Screen</name>
+        <name>Business_Loan_Calculation_Screen</name>
         <label>Business Loan Calculation Screen</label>
         <locationX>197</locationX>
         <locationY>95</locationY>
@@ -547,7 +547,7 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Mortgage_Results</name>
+        <name>Business_Loan_Results</name>
         <label>Business Loan Results</label>
         <locationX>671</locationX>
         <locationY>379</locationY>
@@ -555,14 +555,14 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
-            <name>MortgageInfo</name>
+            <name>businessLoanInfo</name>
             <fieldText>&lt;p&gt;Business Loan Principal: {!businessLoanPrincipal}&lt;/p&gt;&lt;p&gt;Business Loan Rate: {!businessLoanRate}&lt;/p&gt;&lt;p&gt;Business Loan Years: &lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt; {!businessLoanYears}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Lead Id: {!leadId}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <startElementReference>Mortgage_Calculation_Screen</startElementReference>
+    <startElementReference>Business_Loan_Calculation_Screen</startElementReference>
     <status>Draft</status>
     <variables>
         <name>city</name>
