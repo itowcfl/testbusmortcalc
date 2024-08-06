@@ -1,12 +1,12 @@
 <aura:component implements="lightning:availableForFlowScreens" access="global">
-    <aura:attribute name="mortgageRate" type="Decimal" default="3" access="global"/>
-    <aura:attribute name="mortgageYears" type="Integer" default="30" access="global"/>
-    <aura:attribute name="mortgagePrincipal" type="Decimal" default="200000" access="global"/>
-    <aura:attribute name="mortgageYearsOptions" type="String" default="15,20,25,30" access="global"/>
+    <aura:attribute name="businessLoanRate" type="Decimal" default="3" access="global"/>
+    <aura:attribute name="businessLoanYears" type="Integer" default="30" access="global"/>
+    <aura:attribute name="businessLoanPrincipal" type="Decimal" default="200000" access="global"/>
+    <aura:attribute name="businessLoanYearsOptions" type="String" default="15,20,25,30" access="global"/>
 
-    <c:mortgageCalculator onmortgagechange="{!c.handleMortgageChange}" 
-        initPrincipal="{!v.mortgagePrincipal}"
-        initYears="{!v.mortgageYears}"
-        initRate="{!v.mortgageRate}"
-        mortgageYearsOptions="{!v.mortgageYearsOptions}"/>
+    <c:businessLoanCalculator onbusinessLoanchange="{!c.handleMortgageChange}" 
+        initPrincipal="{!v.businessLoanPrincipal}"
+        initYears="{!v.businessLoanYears}"
+        initRate="{!v.businessLoanRate}"
+        businessLoanYearsOptions="{!v.businessLoanYearsOptions}"/>
 </aura:component>	
