@@ -1,7 +1,7 @@
 import { LightningElement, api, track } from 'lwc';
-import mortgageUtils from 'c/mortgageUtils';
+import businessLoanUtils from 'c/businessLoanUtils';
 
-export default class MortgageAmortizationSchedule extends LightningElement {
+export default class BusinessLoanAmortizationSchedule extends LightningElement {
     @api principal;
     @api rate;
     @api years;
@@ -39,7 +39,7 @@ export default class MortgageAmortizationSchedule extends LightningElement {
 
     calculateAmortization() {
         console.log('in calcualteAmortization');
-        this.monthlyPayment = mortgageUtils.calculateMonthlyPayment(this.principal, this.years, this.rate);
+        this.monthlyPayment = businessLoanUtils.calculateMonthlyPayment(this.principal, this.years, this.rate);
         //const interestRate = this.rate / 100/12;
         console.log('monthly Payment ' +this.monthlyPayment);
         const monthlyRate = this.rate / 100/12;
