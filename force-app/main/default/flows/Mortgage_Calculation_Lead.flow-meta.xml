@@ -46,21 +46,21 @@
             <operator>Assign</operator>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>mortgageYears</assignToReference>
+            <assignToReference>businessLoanYears</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>defaultYears</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>mortgagePrincipal</assignToReference>
+            <assignToReference>businessLoanPrincipal</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>defaultPrinciple</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>mortgageRate</assignToReference>
+            <assignToReference>businessLoanRate</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>defaultRate</elementReference>
@@ -98,7 +98,7 @@
                 <leftValueReference>selectedNextScreen</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>mortgageRequest</stringValue>
+                    <stringValue>businessLoanRequest</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -195,7 +195,7 @@
         <inputAssignments>
             <field>Description</field>
             <value>
-                <stringValue>Buyer is interested in a {!mortgagePrincipal} mortgage at a {!mortgageRate}% rate for {!mortgageYears} years.  Additional Notes: {!Additional_Notes}</stringValue>
+                <stringValue>Buyer is interested in a {!businessLoanPrincipal} business loan at a {!businessLoanRate}% rate for {!businessLoanYears} years.  Additional Notes: {!Additional_Notes}</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -273,24 +273,24 @@
         </connector>
         <fields>
             <name>amortizationSchedule</name>
-            <extensionName>c:mortgageAmortizationScheduleWrapper</extensionName>
+            <extensionName>c:businessLoanAmortizationScheduleWrapper</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>mortgagePrincipal</name>
+                <name>businessLoanPrincipal</name>
                 <value>
-                    <elementReference>mortgagePrincipal</elementReference>
+                    <elementReference>businessLoanPrincipal</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>mortgageRate</name>
+                <name>businessLoanRate</name>
                 <value>
-                    <elementReference>mortgageRate</elementReference>
+                    <elementReference>businessLoanRate</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>mortgageYears</name>
+                <name>businessLoanYears</name>
                 <value>
-                    <elementReference>mortgageYears</elementReference>
+                    <elementReference>businessLoanYears</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -302,7 +302,7 @@
             <inputParameters>
                 <name>buttonFields</name>
                 <value>
-                    <stringValue>New Calculation,newCalculation;Initiate Mortgage Request,mortgageRequest</stringValue>
+                    <stringValue>New Calculation,newCalculation;Initiate Mortgage Request,businessLoanRequest</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -327,12 +327,12 @@
         </connector>
         <fields>
             <name>msg1</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Please enter in the following information to start your mortgage process:&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Please enter in the following information to start your business loan process:&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>msg2</name>
-            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(37, 97, 240); font-size: 14px;&quot;&gt;Summary:&lt;/b&gt;&lt;span style=&quot;color: rgb(37, 97, 240); font-size: 14px;&quot;&gt; You are interested in a {!mortgagePrincipal} mortgage at a {!mortgageRate}% rate for {!mortgageYears} years.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;color: rgb(37, 97, 240); font-size: 14px;&quot;&gt;Summary:&lt;/b&gt;&lt;span style=&quot;color: rgb(37, 97, 240); font-size: 14px;&quot;&gt; You are interested in a {!businessLoanPrincipal} business loan at a {!businessLoanRate}% rate for {!businessLoanYears} years.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -492,39 +492,39 @@
             <targetReference>Next_Screen</targetReference>
         </connector>
         <fields>
-            <name>mortgageCalculation</name>
-            <extensionName>c:mortgageCalcWrapper</extensionName>
+            <name>businessLoanCalculation</name>
+            <extensionName>c:businessLoanCalcWrapper</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>mortgagePrincipal</name>
+                <name>businessLoanPrincipal</name>
                 <value>
-                    <elementReference>mortgagePrincipal</elementReference>
+                    <elementReference>businessLoanPrincipal</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>mortgageRate</name>
+                <name>businessLoanRate</name>
                 <value>
-                    <elementReference>mortgageRate</elementReference>
+                    <elementReference>businessLoanRate</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>mortgageYears</name>
+                <name>businessLoanYears</name>
                 <value>
-                    <elementReference>mortgageYears</elementReference>
+                    <elementReference>businessLoanYears</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
             <outputParameters>
-                <assignToReference>mortgagePrincipal</assignToReference>
-                <name>mortgagePrincipal</name>
+                <assignToReference>businessLoanPrincipal</assignToReference>
+                <name>businessLoanPrincipal</name>
             </outputParameters>
             <outputParameters>
-                <assignToReference>mortgageRate</assignToReference>
-                <name>mortgageRate</name>
+                <assignToReference>businessLoanRate</assignToReference>
+                <name>businessLoanRate</name>
             </outputParameters>
             <outputParameters>
-                <assignToReference>mortgageYears</assignToReference>
-                <name>mortgageYears</name>
+                <assignToReference>businessLoanYears</assignToReference>
+                <name>businessLoanYears</name>
             </outputParameters>
         </fields>
         <fields>
@@ -534,7 +534,7 @@
             <inputParameters>
                 <name>buttonFields</name>
                 <value>
-                    <stringValue>View Amortization Schedule,viewSchedule;Initiate Mortgage Request,mortgageRequest;Finish,finish</stringValue>
+                    <stringValue>View Amortization Schedule,viewSchedule;Initiate Mortgage Request,businessLoanRequest;Finish,finish</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -556,7 +556,7 @@
         <allowPause>true</allowPause>
         <fields>
             <name>MortgageInfo</name>
-            <fieldText>&lt;p&gt;Mortgage Principal: {!mortgagePrincipal}&lt;/p&gt;&lt;p&gt;Mortgage Rate: {!mortgageRate}&lt;/p&gt;&lt;p&gt;Mortgage Years: &lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt; {!mortgageYears}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Lead Id: {!leadId}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Mortgage Principal: {!businessLoanPrincipal}&lt;/p&gt;&lt;p&gt;Mortgage Rate: {!businessLoanRate}&lt;/p&gt;&lt;p&gt;Mortgage Years: &lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt; {!businessLoanYears}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Lead Id: {!leadId}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -640,7 +640,7 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>mortgagePrincipal</name>
+        <name>businessLoanPrincipal</name>
         <dataType>Currency</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -651,7 +651,7 @@
         </value>
     </variables>
     <variables>
-        <name>mortgageRate</name>
+        <name>businessLoanRate</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -662,7 +662,7 @@
         </value>
     </variables>
     <variables>
-        <name>mortgageYears</name>
+        <name>businessLoanYears</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
