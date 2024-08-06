@@ -149,9 +149,9 @@
             <label>Navigate to Submit</label>
         </rules>
     </decisions>
-    <interviewLabel>Mortgage Calculation Lead {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>Business Loan Calculation Lead {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
-    <label>Mortgage Calculation Lead</label>
+    <label>Business Loan Calculation Lead</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -302,7 +302,7 @@
             <inputParameters>
                 <name>buttonFields</name>
                 <value>
-                    <stringValue>New Calculation,newCalculation;Initiate Mortgage Request,businessLoanRequest</stringValue>
+                    <stringValue>New Calculation,newCalculation;Initiate Business Loan Request,businessLoanRequest</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -482,7 +482,7 @@
     </screens>
     <screens>
         <name>Mortgage_Calculation_Screen</name>
-        <label>Mortgage Calculation Screen</label>
+        <label>Business Loan Calculation Screen</label>
         <locationX>197</locationX>
         <locationY>95</locationY>
         <allowBack>false</allowBack>
@@ -534,7 +534,7 @@
             <inputParameters>
                 <name>buttonFields</name>
                 <value>
-                    <stringValue>View Amortization Schedule,viewSchedule;Initiate Mortgage Request,businessLoanRequest;Finish,finish</stringValue>
+                    <stringValue>View Amortization Schedule,viewSchedule;Initiate Business Loan Request,businessLoanRequest;Finish,finish</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -548,7 +548,7 @@
     </screens>
     <screens>
         <name>Mortgage_Results</name>
-        <label>Mortgage Results</label>
+        <label>Business Loan Results</label>
         <locationX>671</locationX>
         <locationY>379</locationY>
         <allowBack>true</allowBack>
@@ -556,7 +556,7 @@
         <allowPause>true</allowPause>
         <fields>
             <name>MortgageInfo</name>
-            <fieldText>&lt;p&gt;Mortgage Principal: {!businessLoanPrincipal}&lt;/p&gt;&lt;p&gt;Mortgage Rate: {!businessLoanRate}&lt;/p&gt;&lt;p&gt;Mortgage Years: &lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt; {!businessLoanYears}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Lead Id: {!leadId}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Business Loan Principal: {!businessLoanPrincipal}&lt;/p&gt;&lt;p&gt;Business Loan Rate: {!businessLoanRate}&lt;/p&gt;&lt;p&gt;Business Loan Years: &lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt; {!businessLoanYears}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Lead Id: {!leadId}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
