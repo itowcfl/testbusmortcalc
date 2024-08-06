@@ -1,11 +1,11 @@
 import { LightningElement, track, api} from 'lwc';
-import mortgageUtils from 'c/mortgageUtils';
+import businessLoanUtils from 'c/businessLoanUtils';
 const DELAY = 300;
 export default class MortgageCalculator extends LightningElement {
    @api initPrincipal;
    @api initRate;
    @api initYears;
-   @api mortgageYearsOptions;
+   @api businessLoanYearsOptions;
 
     _principal = 0;
     _years = 0;
@@ -70,15 +70,15 @@ export default class MortgageCalculator extends LightningElement {
     }
 
     calculateMonthlyPayment() {
-        this.monthlyPayment = mortgageUtils.calculateMonthlyPayment(
+        this.monthlyPayment = businessLoanUtils.calculateMonthlyPayment(
             this._principal, this._years, this._rate
         );
     }
 
     get yearOptions() {
-       /* Generates the available years for mortgage calculation based on input from flow */
+       /* Generates the available years for business loan calculation based on input from flow */
        let options = [];
-       let yearValues = this.mortgageYearsOptions.split(',');
+       let yearValues = this.businessLoanYearsOptions.split(',');
        for (let y = 0; y < yearValues.length; y++) {
         let yr = {"label": yearValues[y], "value": yearValues[y]};
         options.push(yr);
@@ -92,7 +92,7 @@ export default class MortgageCalculator extends LightningElement {
         const year = this._years;
         const principal = this._principal;
         const rate = this._rate;
-        const calculateEvent = new CustomEvent('mortgagechange', {detail: {"years": year, "principal": principal, "rate": rate}});
+        const calculateEvent = new CustomEvent('businessLoanchange', {detail: {"years": year, "principal": principal, "rate": rate}});
        // console.log('calculate event ' + JSON.stringify(calculateEvent.detail.years));
         this.dispatchEvent(calculateEvent);
     }
