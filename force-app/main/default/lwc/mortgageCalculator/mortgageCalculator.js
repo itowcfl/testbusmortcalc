@@ -1,7 +1,7 @@
 import { LightningElement, track, api} from 'lwc';
 import businessLoanUtils from 'c/businessLoanUtils';
 const DELAY = 300;
-export default class MortgageCalculator extends LightningElement {
+export default class BusinessLoanCalculator extends LightningElement {
    @api initPrincipal;
    @api initRate;
    @api initYears;
@@ -35,25 +35,25 @@ export default class MortgageCalculator extends LightningElement {
             this._years = this.initYears;
         }
         this.calculateMonthlyPayment();
-        this.sendMortgageValues();
+        this.sendBusinessLoanValues();
     }
 
     handleYearChange(event) {
         this._years = event.target.value;
         this.calculateMonthlyPayment();
-        this.sendMortgageValues();
+        this.sendBusinessLoanValues();
     }
 
     handleRateChange(event) {
         this._rate = event.target.value;
         //this.calculateMonthlyPayment();
-        //this.sendMortgageValues();
+        //this.sendBusinessLoanValues();
        window.clearTimeout(this.delayTimeout);
         //const searchKey = event.target.value;
         this.delayTimeout = setTimeout(() => {
             //this.searchKey = searchKey;
             this.calculateMonthlyPayment();
-            this.sendMortgageValues();
+            this.sendBusinessLoanValues();
         }, DELAY);
     }
     handlePrincipalChange(event) {
@@ -63,10 +63,10 @@ export default class MortgageCalculator extends LightningElement {
         this.delayTimeout = setTimeout(() => {
             //this.searchKey = searchKey;
             this.calculateMonthlyPayment();
-            this.sendMortgageValues();
+            this.sendBusinessLoanValues();
         }, DELAY);
         //this.calculateMonthlyPayment();
-        //this.sendMortgageValues();
+        //this.sendBusinessLoanValues();
     }
 
     calculateMonthlyPayment() {
@@ -87,7 +87,7 @@ export default class MortgageCalculator extends LightningElement {
     }
 
 
-    sendMortgageValues() {
+    sendBusinessLoanValues() {
        // console.log('in calculateMonthlyPayment '+ this.monthlyPayment);
         const year = this._years;
         const principal = this._principal;
